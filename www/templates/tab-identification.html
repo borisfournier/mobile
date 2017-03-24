@@ -1,0 +1,18 @@
+<ion-view view-title="Identification">
+  <ion-content>
+    <ion-list>
+    	<ion-item type="item-text-wrap" type="item-text-wrap">
+			    <h1>TravelInLive</h1>
+				  <label class="item item-input">
+				    <span class="input-label" ></span>
+				    <input type="text" placeholder="Identifiant"  ng-model="data.identifiant" required>
+				  </label>
+				  <label class="item item-input">
+				    <span class="input-label"></span>
+				    <input type="password" placeholder="Password" ng-model="data.password" required>
+				  </label>
+				  <button class="button button-full button-calm" ng-click="connect()">Connexion</button>
+		</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

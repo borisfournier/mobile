@@ -1,0 +1,24 @@
+<ion-view view-title="Geolocation">
+  <ion-content>
+    <ion-list>
+	    <map ng-transclude class='google-map' center='map.center' options="map.options" events="map.events"> 
+	  		<marker position='marker.position' center="map.center" options="marker.options" events="marker.events"></marker>
+	  		<points coords="points.coords" center="map.center"></points>
+		</map>
+		<div class="list list-inset">
+		  <label class="item item-input">
+		    <i class="icon ion-search placeholder-icon"></i>
+		    <input type="text" placeholder="Search" ng-model="search">
+		  </label>
+		</div>
+
+	    <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="user in users | filter:search | orderBy:'+user.name'" type="item-text-wrap">
+			<img ng-src="{{user.avatar}}">
+			<p>{{user.name}} {{user.lastname}}</p> 		
+			<p>Age : {{user.age}}</p>
+			<p>{{user.adress}}</p>
+			<button class="button button-calm" ng-click="location({{user.idUser}})">Localiser</button>
+	    </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

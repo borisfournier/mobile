@@ -1,0 +1,21 @@
+<ion-view view-title="Profil">
+  <ion-content>
+    <ion-list>
+		<div class="list list-inset">
+		  <label class="item item-input">
+		    <i class="icon ion-search placeholder-icon"></i>
+		    <input type="text" placeholder="Search" ng-model="search">
+		  </label>
+		</div>
+
+
+		    <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="user in users | filter:search | orderBy:'+user.name'" type="item-text-wrap">
+				<img ng-src="{{user.avatar}}">
+				<p>{{user.name | uppercase}} {{user.lastname | uppercase}}</p> 		
+				<button class="button button-calm" ng-click="profil({{user.idUser}})">Profil</button>
+	<!-- 			<a href="#/tab/profil/{{user.idUser}}" class="button button-calm">profil</a>
+	 -->	 </ion-item>
+
+    </ion-list>
+  </ion-content>
+</ion-view>
